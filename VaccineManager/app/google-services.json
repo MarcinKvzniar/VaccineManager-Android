@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "588578977079",
+    "project_id": "vaccinemanager-ea63f",
+    "storage_bucket": "vaccinemanager-ea63f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588578977079:android:473ac1e2aec69676f896b2",
+        "android_client_info": {
+          "package_name": "com.example.vaccinemanager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCowJYEY_0jUQAhzZcBhggVDKGsmqh-h2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
