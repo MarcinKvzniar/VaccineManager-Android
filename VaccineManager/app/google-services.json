@@ -12,7 +12,20 @@
           "package_name": "com.example.vaccinemanager"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "588578977079-bjsbpoahg5nujfq3ral11hfb7e55k02b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vaccinemanager",
+            "certificate_hash": "0636a5a04b4f594398d73e27ccc4ad67777fb8d6"
+          }
+        },
+        {
+          "client_id": "588578977079-au2i4uk1cbojobnq4th7brmp73jpakoj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCowJYEY_0jUQAhzZcBhggVDKGsmqh-h2I"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588578977079-8gm6oih5sd725bs0qet1uqhrkkk230j1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

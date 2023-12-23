@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <EditText
-        android:id="@+id/inputEmail"
+        android:id="@+id/inputEmailReg"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
@@ -70,16 +70,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:background="@drawable/btn_bg"
-        android:backgroundTint="@color/colorPrimaryDark"
+        android:backgroundTint="@color/darkBlue"
         android:text="Register"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/inputRepeatPassword"
-        app:layout_constraintStart_toStartOf="@+id/inputRepeatPassword"
-        app:layout_constraintTop_toBottomOf="@+id/inputRepeatPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/inputRepeatPasswordReg"
+        app:layout_constraintStart_toStartOf="@+id/inputRepeatPasswordReg"
+        app:layout_constraintTop_toBottomOf="@+id/inputRepeatPasswordReg" />
 
     <EditText
-        android:id="@+id/inputPassword"
+        android:id="@+id/inputPasswordReg"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
@@ -94,12 +93,12 @@
         android:paddingRight="20dp"
         android:paddingBottom="10dp"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/inputEmail"
-        app:layout_constraintStart_toStartOf="@+id/inputEmail"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+        app:layout_constraintEnd_toEndOf="@+id/inputEmailReg"
+        app:layout_constraintStart_toStartOf="@+id/inputEmailReg"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmailReg" />
 
     <EditText
-        android:id="@+id/inputRepeatPassword"
+        android:id="@+id/inputRepeatPasswordReg"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
@@ -113,9 +112,26 @@
         android:paddingTop="10dp"
         android:paddingRight="20dp"
         android:paddingBottom="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/inputPassword"
-        app:layout_constraintStart_toStartOf="@+id/inputPassword"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/inputPasswordReg"
+        app:layout_constraintStart_toStartOf="@+id/inputPasswordReg"
+        app:layout_constraintTop_toBottomOf="@+id/inputPasswordReg" />
+
+    <Button
+        android:id="@+id/btnGoogleReg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:backgroundTint="@color/darkBlue"
+        android:drawableLeft="@drawable/google"
+        android:gravity="center"
+        android:text="Google"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <LinearLayout
         android:id="@+id/linearLayout"

@@ -24,17 +24,17 @@
         app:layout_constraintVertical_bias="0.100000024" />
 
     <EditText
-        android:id="@+id/inputName"
+        android:id="@+id/inputEmailLog"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_person"
+        android:drawableStart="@drawable/ic_email"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Name"
+        android:hint="E-mail"
         android:inputType="text"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
@@ -42,12 +42,12 @@
         android:paddingBottom="10dp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        tools:ignore="TextFields" />
 
     <EditText
-        android:id="@+id/inputPassword"
+        android:id="@+id/inputPasswordLog"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="12dp"
@@ -63,10 +63,10 @@
         android:paddingBottom="10dp"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/inputName"
+        app:layout_constraintEnd_toEndOf="@+id/inputEmailLog"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/inputName"
-        app:layout_constraintTop_toBottomOf="@+id/inputName" />
+        app:layout_constraintStart_toStartOf="@+id/inputEmailLog"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmailLog" />
 
     <TextView
         android:id="@+id/forgotPassword"
@@ -75,22 +75,22 @@
         android:layout_marginTop="16dp"
         android:text="Forgot Password?"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/inputPassword"
-        app:layout_constraintStart_toStartOf="@+id/inputPassword"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/inputPasswordLog"
+        app:layout_constraintStart_toStartOf="@+id/inputPasswordLog"
+        app:layout_constraintTop_toBottomOf="@+id/inputPasswordLog" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:background="@drawable/btn_bg"
+        android:backgroundTint="@color/darkBlue"
         android:gravity="center"
         android:text="Login"
         android:textAlignment="center"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/inputPassword"
-        app:layout_constraintStart_toStartOf="@+id/inputPassword"
+        app:layout_constraintEnd_toEndOf="@+id/inputPasswordLog"
+        app:layout_constraintStart_toStartOf="@+id/inputPasswordLog"
         app:layout_constraintTop_toBottomOf="@+id/forgotPassword" />
 
     <LinearLayout
@@ -120,13 +120,13 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnGoogle"
+        android:id="@+id/btnGoogleLog"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="48dp"
-        android:background="@drawable/btn_bg"
+        android:backgroundTint="@color/darkBlue"
         android:drawableLeft="@drawable/google"
         android:gravity="center"
         android:text="Google"
