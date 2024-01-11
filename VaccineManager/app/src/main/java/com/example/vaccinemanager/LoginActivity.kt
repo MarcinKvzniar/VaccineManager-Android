@@ -149,10 +149,13 @@ class LoginActivity : AppCompatActivity() {
 
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
-        firebaseAuth.signInWithCredential(credential)
+        FirebaseAuth.getInstance().signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    Toast.makeText(this, "Google Sign-In successful",
+                        Toast.LENGTH_SHORT).show()
                     goToHomeActivity()
+                    finish()
                 } else {
                     Toast.makeText(this, "Authentication Failed",
                         Toast.LENGTH_SHORT).show()

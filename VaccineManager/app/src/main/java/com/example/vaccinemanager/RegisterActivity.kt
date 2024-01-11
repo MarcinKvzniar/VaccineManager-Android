@@ -136,7 +136,8 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun userRegistrationSuccess() {
-        Toast.makeText(this@RegisterActivity, getString(R.string.register_success), Toast.LENGTH_LONG).show()
+        Toast.makeText(this@RegisterActivity, getString(R.string.register_success),
+            Toast.LENGTH_LONG).show()
     }
 
     private fun signInWithGoogle() {
@@ -153,7 +154,8 @@ class RegisterActivity : AppCompatActivity() {
                 val account = task.getResult(ApiException::class.java)
                 firebaseAuthWithGoogle(account?.idToken!!)
             } catch (e: ApiException) {
-                Toast.makeText(this, "Google Sign In Failed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Google Sign In Failed",
+                    Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -163,11 +165,10 @@ class RegisterActivity : AppCompatActivity() {
         firebaseAuth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, go to HomeActivity
                     goToHomeActivity()
                 } else {
-                    // If sign in fails, display a message to the user.
-                    Toast.makeText(this, "Authentication Failed", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Authentication Failed",
+                        Toast.LENGTH_SHORT).show()
                 }
             }
     }
