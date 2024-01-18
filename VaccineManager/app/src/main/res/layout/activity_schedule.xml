@@ -1,0 +1,59 @@
+<!-- activity_schedule.xml -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ScheduleActivity">
+
+
+    <DatePicker
+        android:id="@+id/btnDatePicker"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:calendarViewShown="true"
+        android:datePickerMode="calendar"
+        android:spinnersShown="false"
+        app:layout_constraintBottom_toTopOf="@+id/btnTimePicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etVaccineName"
+        app:layout_constraintVertical_bias="0.373" />
+
+    <TimePicker
+        android:id="@+id/btnTimePicker"
+        android:layout_width="300dp"
+        android:layout_height="330dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="313dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnScheduleAppointment"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Schedule Appointment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTimePicker"
+        tools:layout_editor_absoluteY="617dp" />
+
+    <EditText
+        android:id="@+id/etVaccineName"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Vaccine Name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

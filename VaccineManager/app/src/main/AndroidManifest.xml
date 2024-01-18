@@ -13,6 +13,15 @@
         android:theme="@style/Theme.VaccineManager"
         tools:targetApi="34">
         <activity
+            android:name=".RequirementsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScheduleActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
