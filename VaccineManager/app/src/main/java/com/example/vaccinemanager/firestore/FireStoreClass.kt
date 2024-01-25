@@ -8,10 +8,9 @@ class FireStoreClass {
 
     private val mFireStore = FirebaseFirestore.getInstance()
 
-
     fun registerUserFS(activity: RegisterActivity, userInfo: User){
 
-        mFireStore.collection("users")
+        mFireStore.collection("Appointments")
             .document(userInfo.id)
             .set(userInfo, SetOptions.merge())
             .addOnSuccessListener {

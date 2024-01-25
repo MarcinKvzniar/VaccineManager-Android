@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="covid_mrna_info">Pfizer-BioNTech and Moderna COVID-19 vaccines are mRNA vaccines. mRNA vaccines use mRNA created in a laboratory to teach our cells how to make a protein—or even just a piece of a protein—that triggers an immune response inside our bodies. The mRNA from the vaccines is broken down within a few days after vaccination and discarded from the body.</string>
+    <string name="covid_protein_info">Novavax COVID-19 vaccine is a protein subunit vaccine. Protein subunit vaccines contain pieces (proteins) of the virus that causes COVID-19. The virus pieces are the spike protein. The Novavax COVID-19 vaccine contains another ingredient called an adjuvant. It helps the immune system respond to that spike protein. After learning how to respond to the spike protein, the immune system will be able to respond quickly to the actual virus spike protein and protect you against COVID-19.</string>
+    <string name="bcg_info">Tuberculosis (TB) is an infection that most often attacks the lungs, but in infants and young children, affects other organs like the brain. A severe case could cause serious complications or death.
+
+        TB is very difficult to treat when contracted, and treatment is lengthy and not always successful.</string>
+    <string name="hepatis_b_info">Hepatitis B virus is a dangerous liver infection that, when caught as an infant, often shows no symptoms for decades. It can develop into cirrhosis and liver cancer later in life.</string>
+    <string name="polio_info">Polio is a virus that paralyzes 1 in 200 people who get infected. Among those cases, 5 to 10 per cent die when their breathing muscles are paralyzed. There is no cure for polio once the paralysis sets in – only treatment to alleviate the symptoms.</string>
+    <string name="dtp_diphtheria_info">Diphtheria infects the throat and tonsils, making it hard for children to breathe and swallow. Severe cases can cause heart, kidney and/or nerve damage.</string>
+    <string name="dtp_tetanus_info">Tetanus causes very painful muscle contractions. It can cause children’s neck and jaw muscles to lock (lockjaw), making it hard for them to open their mouth, swallow (breastfeed) or breathe. Even with treatment, tetanus is often fatal.</string>
+    <string name="dtp_pertussis_info">Pertussis (whooping cough) causes coughing spells that can last for weeks. In some cases, it can lead to trouble breathing, pneumonia, and death.</string>
+    <string name="hib_info">Hib is a bacterium that causes pneumonia, meningitis and other severe infections almost exclusively in children under 5 years old.</string>
+    <string name="pneumococcal_info">Pneumococcal diseases range from serious diseases such as meningitis and pneumonia to milder but more common infections like sinusitis and ear infections.
+
+        Pneumococcal diseases are a common cause of sickness and death worldwide, especially among young children under 2 years old.</string>
+    <string name="rotavirus_info">Rotaviruses cause severe diarrhoea and vomiting, which can lead to dehydration, electrolyte imbalance and shock in young children. This can lead to death if treatment, especially fluid replacement, is not immediately started.</string>
+    <string name="mmr_measles_info">Measles is a highly contagious disease with symptoms that include fever, runny nose, white spots in the back of the mouth and a rash. Serious cases can cause blindness, brain swelling and death.</string>
+    <string name="mmr_mumps_info">Mumps can cause headache, malaise, fever, and swollen salivary glands. Complications can include meningitis, swollen testicles and deafness.</string>
+    <string name="mmr_rubella_info">Rubella infection in children and adults is usually mild, but in pregnant women it can cause miscarriage, stillbirth, infant death or birth defects.</string>
+    <string name="hpv_info">HPV usually has no symptoms, but some strains can cause cervical cancer – the fourth most common cancer in women. Almost all cases of cervical cancer (99 per cent) are caused by HPV. HPV can also cause genital warts in both men and women, as well as cancer on other parts of the body.</string>
+    <string name="default_vaccine_info">"Information not available"</string>
+
+    <!-- Vaccines information's taken from here: https://www.unicef.org/parenting/health/vaccines-and-diseases-they-prevent
+         and here: https://www.cdc.gov/coronavirus/2019-ncov/vaccines/different-vaccines/overview-COVID-19-vaccines.html -->
+</resources>

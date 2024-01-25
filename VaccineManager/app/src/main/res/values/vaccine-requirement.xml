@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Australia -->
+    <string name="australia_info">Required vaccines: Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Brazil -->
+    <string name="brazil_info">Required vaccines: Yellow Fever, Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Cambodia -->
+    <string name="cambodia_info">Required vaccines: Hepatitis A, Typhoid, Japanese Encephalitis, Rabies</string>
+
+    <!-- Costa Rica -->
+    <string name="costa_rica_info">Required vaccines: Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Egypt -->
+    <string name="egypt_info">Required vaccines: Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- India -->
+    <string name="india_info">Required vaccines: Hepatitis A, Typhoid, Japanese Encephalitis, Rabies</string>
+
+    <!-- Indonesia (Bali) -->
+    <string name="indonesia_info">Required vaccines: Hepatitis A, Typhoid, Japanese Encephalitis, Rabies</string>
+
+    <!-- Kenya -->
+    <string name="kenya_info">Required vaccines: Yellow Fever, Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Morocco -->
+    <string name="morocco_info">Required vaccines: Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Nepal -->
+    <string name="nepal_info">Required vaccines: Hepatitis A, Typhoid, Japanese Encephalitis, Rabies</string>
+
+    <!-- Peru -->
+    <string name="peru_info">Required vaccines: Yellow Fever, Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- South Africa -->
+    <string name="south_africa_info">Required vaccines: Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Tanzania -->
+    <string name="tanzania_info">Required vaccines: Yellow Fever, Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Thailand -->
+    <string name="thailand_info">Required vaccines: Hepatitis A, Typhoid, Japanese Encephalitis, Rabies</string>
+
+    <!-- Vietnam -->
+    <string name="vietnam_info">Required vaccines: Hepatitis A, Typhoid, Japanese Encephalitis, Rabies</string>
+
+    <!-- Argentina -->
+    <string name="argentina_info">Required vaccines: Yellow Fever, Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Bolivia -->
+    <string name="bolivia_info">Required vaccines: Yellow Fever, Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Chile -->
+    <string name="chile_info">Required vaccines: Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Ecuador -->
+    <string name="ecuador_info">Required vaccines: Yellow Fever, Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Fiji -->
+    <string name="fiji_info">Required vaccines: Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Ghana -->
+    <string name="ghana_info">Required vaccines: Yellow Fever, Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Japan -->
+    <string name="japan_info">Required vaccines: Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Malaysia -->
+    <string name="malaysia_info">Required vaccines: Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- Mexico -->
+    <string name="mexico_info">Required vaccines: Hepatitis A, Typhoid, Rabies</string>
+
+    <!-- New Zealand -->
+    <string name="new_zealand_info">Required vaccines: Hepatitis A, Typhoid, Rabies</string>
+
+    <string name="default_country_info">Requirements not found</string>
+
+    <!-- Requirement informations provided by Chat GPT and taken from: https://www.gov.pl/web/gis/zalecane-szczepienia-dla-podrozujacych -->
+</resources>

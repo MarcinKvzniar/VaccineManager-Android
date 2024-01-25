@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.service.controls.ControlsProviderService.TAG
 import android.text.TextUtils
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -35,6 +38,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var btnGoogleLog: Button
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var showPassword : CheckBox
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,9 +63,20 @@ class LoginActivity : AppCompatActivity() {
     private fun initViews() {
         inputEmailLog = findViewById(R.id.inputEmailLog)
         inputPasswordLog = findViewById(R.id.inputPasswordLog)
+        showPassword = findViewById(R.id.showPasswordCheckBox)
         btnLogin = findViewById(R.id.btnLogin)
         btnGoToRegister = findViewById(R.id.tvSignUp)
         btnGoogleLog = findViewById(R.id.btnGoogleLog)
+
+        showPassword.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                inputPasswordLog.
+                transformationMethod = HideReturnsTransformationMethod.getInstance()
+            } else {
+                inputPasswordLog.
+                transformationMethod = PasswordTransformationMethod.getInstance()
+            }
+        }
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))

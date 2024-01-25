@@ -1,59 +1,84 @@
-<!-- activity_schedule.xml -->
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:background="@drawable/register_bg"
     tools:context=".ScheduleActivity">
-
-
-    <DatePicker
-        android:id="@+id/btnDatePicker"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:calendarViewShown="true"
-        android:datePickerMode="calendar"
-        android:spinnersShown="false"
-        app:layout_constraintBottom_toTopOf="@+id/btnTimePicker"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etVaccineName"
-        app:layout_constraintVertical_bias="0.373" />
-
-    <TimePicker
-        android:id="@+id/btnTimePicker"
-        android:layout_width="300dp"
-        android:layout_height="330dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="313dp"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/btnScheduleAppointment"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:text="Schedule Appointment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnTimePicker"
-        tools:layout_editor_absoluteY="617dp" />
 
     <EditText
         android:id="@+id/etVaccineName"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
         android:hint="Vaccine Name"
-        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <Button
+        android:id="@+id/btnDatePicker"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Set Date"
+        app:layout_constraintEnd_toEndOf="@+id/etVaccineName"
+        app:layout_constraintStart_toStartOf="@+id/etVaccineName"
+        app:layout_constraintTop_toBottomOf="@+id/etVaccineName" />
+
+    <Button
+        android:id="@+id/btnTimePicker"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Set Time"
+        app:layout_constraintEnd_toEndOf="@+id/btnDatePicker"
+        app:layout_constraintStart_toStartOf="@+id/btnDatePicker"
+        app:layout_constraintTop_toBottomOf="@+id/btnDatePicker" />
+
+    <Button
+        android:id="@+id/btnEnterAddress"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="Enter Address"
+        app:layout_constraintEnd_toEndOf="@+id/btnTimePicker"
+        app:layout_constraintStart_toStartOf="@+id/btnTimePicker"
+        app:layout_constraintTop_toBottomOf="@+id/btnTimePicker" />
+
+    <Button
+        android:id="@+id/btnScheduleAppointment"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="64dp"
+        android:gravity="center"
+        android:text="Schedule Appointment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnEnterAddress"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btnEnterAddress"
+        app:layout_constraintTop_toBottomOf="@+id/btnEnterAddress" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="SCHEDULE VACCINE"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
