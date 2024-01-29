@@ -39,6 +39,10 @@ class HomeActivity : AppCompatActivity() {
                 LoginActivity::class.java))
         }
 
+        btnVacHistory.setOnClickListener {
+            startActivity(Intent(this@HomeActivity,
+                HistoryActivity::class.java))
+        }
 
     }
 

@@ -1,8 +1,10 @@
 package com.example.vaccinemanager
 
 import android.app.Dialog
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
@@ -13,6 +15,13 @@ import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.firestore
 import java.util.Calendar
+import com.example.vaccinemanager.firestore.FireStoreData
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 
 
 class ScheduleActivity : AppCompatActivity() {
@@ -24,7 +33,10 @@ class ScheduleActivity : AppCompatActivity() {
     private lateinit var selectedTime: Calendar
     private lateinit var btnSaveSchedule: Button
     private lateinit var btnEnterAddress: Button
-    private val db = Firebase.firestore
+    private var enteredAddress: String = ""
+    private var dateString: String = ""
+    private var timeString: String = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,12 +58,7 @@ class ScheduleActivity : AppCompatActivity() {
 
         btnSaveSchedule.setOnClickListener {
             saveSchedule()
-            startActivity(
-                Intent(this@ScheduleActivity,
-                    HomeActivity::class.java)
-            )
         }
-
     }
 
     private fun initViews() {
@@ -76,7 +83,8 @@ class ScheduleActivity : AppCompatActivity() {
             val selectedMonth = datePicker.month
             val selectedDay = datePicker.dayOfMonth
 
-            showToast("Selected Date: $selectedDay/${selectedMonth + 1}/$selectedYear")
+            dateString = "$selectedDay/${selectedMonth + 1}/$selectedYear"
+            showToast("Selected Date: $dateString")
 
             dialog.dismiss()
         }
@@ -95,14 +103,14 @@ class ScheduleActivity : AppCompatActivity() {
             val selectedHour = timePicker.currentHour
             val selectedMinute = timePicker.currentMinute
 
-            showToast("Selected Time: $selectedHour:$selectedMinute")
+            timeString = "$selectedHour:$selectedMinute"
+            showToast("Selected Time: $timeString")
 
             dialog.dismiss()
         }
 
         dialog.show()
     }
-
 
     private fun showAddressEntryDialog() {
         val dialog = Dialog(this)
@@ -112,9 +120,8 @@ class ScheduleActivity : AppCompatActivity() {
         val btnSaveAddress = dialog.findViewById<Button>(R.id.btnSaveAddress)
 
         btnSaveAddress.setOnClickListener {
-            val address = etAddress.text
-
-            showToast("Typed Address: $address")
+            enteredAddress = etAddress.text.toString()
+            showToast("Entered Address: $enteredAddress")
 
             dialog.dismiss()
         }
@@ -126,34 +133,29 @@ class ScheduleActivity : AppCompatActivity() {
         val email =  FirebaseAuth.getInstance().currentUser?.email.toString()
         val vaccineName = etVaccineName.text.toString().trim()
 
+        val appointmentDetails = hashMapOf(
+            "email" to email,
+            "vaccineName" to vaccineName,
+            "date" to dateString,
+            "time" to timeString,
+            "address" to enteredAddress
+        )
+
         if (vaccineName.isNotEmpty()) {
-            val calendar = Calendar.getInstance().apply {
-                set(Calendar.YEAR, selectedDate.get(Calendar.YEAR))
-                set(Calendar.MONTH, selectedDate.get(Calendar.MONTH))
-                set(Calendar.DAY_OF_MONTH, selectedDate.get(Calendar.DAY_OF_MONTH))
-                set(Calendar.HOUR_OF_DAY, selectedTime.get(Calendar.HOUR_OF_DAY))
-                set(Calendar.MINUTE, selectedTime.get(Calendar.MINUTE))
-                set(Calendar.SECOND, 0)
-            }
-            val timestamp = calendar.time
+            val db = FirebaseFirestore.getInstance()
 
-            // val firebaseData = FireStoreData(email, vaccineName, dateTime, address)
-
-            val appointmentDetails = hashMapOf(
-                "vaccineName" to vaccineName,
-                "timestamp" to timestamp,
-            )
-
-            db.collection("Appointments")
+            db.collection("appointments")
                 .add(appointmentDetails)
                 .addOnSuccessListener { documentReference ->
-                    println("DocumentSnapshot added with ID: ${documentReference.id}")
+                    Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                    showToast("Appointment saved successfully")
+                    startActivity(Intent(this@ScheduleActivity,
+                        HomeActivity::class.java))
                 }
                 .addOnFailureListener { e ->
-                    println("Error adding document: $e")
+                    Log.w(TAG, "Error adding document", e)
+                    showToast("Failed to save appointment. Please try again.")
                 }
-        } else {
-            showToast("Please fill in all the details.")
         }
     }
 

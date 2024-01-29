@@ -15,31 +15,31 @@ class RequirementsActivity : AppCompatActivity() {
     private lateinit var listView: ListView
     private lateinit var btnBackHome: Button
     private val countryList = arrayOf(
+        "Argentina",
         "Australia",
+        "Bolivia",
         "Brazil",
         "Cambodia",
+        "Chile",
         "Costa Rica",
+        "Ecuador",
         "Egypt",
+        "Fiji",
+        "Ghana",
         "India",
         "Indonesia (Bali)",
+        "Japan",
         "Kenya",
+        "Malaysia",
+        "Mexico",
         "Morocco",
         "Nepal",
+        "New Zealand",
         "Peru",
         "South Africa",
         "Tanzania",
         "Thailand",
-        "Vietnam",
-        "Argentina",
-        "Bolivia",
-        "Chile",
-        "Ecuador",
-        "Fiji",
-        "Ghana",
-        "Japan",
-        "Malaysia",
-        "Mexico",
-        "New Zealand"
+        "Vietnam"
     )
 
     private val countryReqMap = mapOf(
