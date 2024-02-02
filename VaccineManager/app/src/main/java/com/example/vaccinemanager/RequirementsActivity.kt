@@ -1,6 +1,5 @@
 package com.example.vaccinemanager
 
-import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +9,14 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * RequirementsActivity displays travel requirements for different countries.
+ *
+ * @property listView ListView to display the list of countries.
+ * @property btnBackHome Button to navigate back to the HomeActivity.
+ * @property countryList Array of strings containing the names of countries.
+ * @property countryReqMap Map containing country names as keys and corresponding travel requirement information resource IDs as values.
+ */
 class RequirementsActivity : AppCompatActivity() {
 
     private lateinit var listView: ListView
@@ -70,7 +77,9 @@ class RequirementsActivity : AppCompatActivity() {
         "New Zealand" to R.string.new_zealand_info
     )
 
-    @SuppressLint("MissingInflatedId")
+    /**
+     * Initializes the activity layout and sets up necessary listeners.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_requirements)
@@ -84,7 +93,7 @@ class RequirementsActivity : AppCompatActivity() {
             )
         }
 
-        listView = findViewById(R.id.listViewVaccines)
+        listView = findViewById(R.id.listViewReq)
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, countryList)
         listView.adapter = adapter
 
@@ -94,6 +103,11 @@ class RequirementsActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Displays a dialog containing travel requirements for the selected country.
+     *
+     * @param countryName The name of the selected country.
+     */
     private fun showTravelRequirementsDialog(countryName: String) {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_travel_requirements)

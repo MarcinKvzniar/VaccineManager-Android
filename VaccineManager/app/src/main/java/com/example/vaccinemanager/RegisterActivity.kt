@@ -18,15 +18,33 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.GoogleAuthProvider
 
+/**
+ * RegisterActivity allows users to register in the application
+ * using email/password or Google authentication.
+ *
+ * @property inputNameReg EditText for user's name input during registration.
+ * @property inputEmailReg EditText for user's email input during registration.
+ * @property inputPasswordReg EditText for user's password input during registration.
+ * @property inputRepPassReg EditText for user's repeated password input during registration.
+ * @property btnRegister Button to initiate the registration process.
+ * @property btnGoToLogin TextView to navigate to the login screen.
+ * @property btnGoogleReg Button to initiate Google Sign-In during registration.
+ * @property googleSignInClient GoogleSignInClient for Google Sign-In.
+ * @property firebaseAuth FirebaseAuth instance for Firebase Authentication.
+ */
 class RegisterActivity : AppCompatActivity() {
 
+    // Buttons for UI interaction
+    private lateinit var btnRegister: Button
+    private lateinit var btnGoToLogin: TextView
+    private lateinit var btnGoogleReg: Button
+
+    // EditTexts for user input
     private lateinit var inputEmailReg: EditText
     private lateinit var inputNameReg: EditText
     private lateinit var inputPasswordReg: EditText
     private lateinit var inputRepPassReg: EditText
-    private lateinit var btnRegister: Button
-    private lateinit var btnGoToLogin: TextView
-    private lateinit var btnGoogleReg: Button
+
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var firebaseAuth: FirebaseAuth
 
@@ -52,6 +70,9 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Initializes all the views and sets up necessary listeners.
+     */
     private fun initViews() {
         inputNameReg = findViewById(R.id.inputName)
         inputEmailReg = findViewById(R.id.inputEmailReg)
@@ -70,6 +91,9 @@ class RegisterActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
     }
 
+    /**
+     * Validates the registration details entered by the user.
+     */
     private fun validateRegisterDetails(): Boolean {
         val specialChars = "!@#$%^&*-_+=,./\\".toCharArray()
         return when {
@@ -107,6 +131,9 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Registers the user with the provided details.
+     */
     private fun registerUser() {
         val login = inputEmailReg.text.toString().trim()
         val password = inputPasswordReg.text.toString().trim()
@@ -131,20 +158,32 @@ class RegisterActivity : AppCompatActivity() {
             }
     }
 
+    /**
+     * Shows a basic Toast message.
+     */
     private fun showBasicToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
+    /**
+     * Registers the user with the provided details.
+     */
     fun userRegistrationSuccess() {
         Toast.makeText(this@RegisterActivity, getString(R.string.register_success),
             Toast.LENGTH_LONG).show()
     }
 
+    /**
+     * Initiates the Google Sign-In process during registration.
+     */
     private fun signInWithGoogle() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
+    /**
+     * Handles the result of the Google Sign-In activity during registration.
+     */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -160,6 +199,9 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Authenticates the user with Firebase using Google credentials during registration.
+     */
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         firebaseAuth.signInWithCredential(credential)
@@ -173,12 +215,16 @@ class RegisterActivity : AppCompatActivity() {
             }
     }
 
+    /**
+     * Navigates the user to the HomeActivity upon successful Google Sign-In.
+     */
     private fun goToHomeActivity() {
         val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent)
         finish()
     }
 
+    // Request code for Google Sign-In
     companion object {
         private const val RC_SIGN_IN = 123
     }

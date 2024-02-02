@@ -1,41 +1,49 @@
 package com.example.vaccinemanager
 
 import android.content.Intent
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.service.controls.ControlsProviderService.TAG
 import android.text.TextUtils
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
-import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.RequiresApi
-import com.example.vaccinemanager.firestore.FireStoreClass
-import com.example.vaccinemanager.firestore.User
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.firestore.FirebaseFirestore
 
+/**
+ * LoginActivity allows users to log in to the application
+ * using email/password or Google authentication.
+ *
+ * @property inputEmailLog EditText for user email input.
+ * @property inputPasswordLog EditText for user password input.
+ * @property btnLogin Button to initiate login process.
+ * @property btnGoToRegister TextView to navigate to the registration screen.
+ * @property btnGoogleLog Button to initiate Google Sign-In.
+ * @property googleSignInClient GoogleSignInClient for Google Sign-In.
+ * @property firebaseAuth FirebaseAuth instance for Firebase Authentication.
+ * @property showPassword CheckBox to toggle password visibility.
+ */
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var inputEmailLog: EditText
-    private lateinit var inputPasswordLog: EditText
+    // Buttons for UI interaction
     private lateinit var btnLogin: Button
     private lateinit var btnGoToRegister: TextView
     private lateinit var btnGoogleLog: Button
+
+    // EditTexts for user input
+    private lateinit var inputEmailLog: EditText
+    private lateinit var inputPasswordLog: EditText
+
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var showPassword : CheckBox
@@ -60,6 +68,9 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Initializes all the views and sets up necessary listeners.
+     */
     private fun initViews() {
         inputEmailLog = findViewById(R.id.inputEmailLog)
         inputPasswordLog = findViewById(R.id.inputPasswordLog)
@@ -87,6 +98,9 @@ class LoginActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
     }
 
+    /**
+     * Validates the login details entered by the user.
+     */
     private fun validateLoginDetails(): Boolean {
         return when {
             TextUtils.isEmpty(inputEmailLog.text.toString().trim { it <= ' ' }) -> {
@@ -101,6 +115,9 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+    /**
+     * Logs in the registered user using email and password.
+     */
     private fun logInRegisteredUser() {
         if (validateLoginDetails()) {
             val email = inputEmailLog.text.toString().trim()
@@ -130,6 +147,9 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Navigates the user to the HomeActivity upon successful login.
+     */
     private fun goToHomeActivity() {
         val uid = FirebaseAuth.getInstance().currentUser?.email.toString()
 
@@ -138,15 +158,25 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    /**
+     * Shows a basic Toast message.
+     */
     private fun showBasicToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
+    /**
+     * Initiates the Google Sign-In process.
+     */
     private fun signInWithGoogle() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
+    /**
+     * Handles the result of the Google Sign-In activity.
+     */
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -162,6 +192,9 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Authenticates the user with Firebase using Google credentials.
+     */
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         FirebaseAuth.getInstance().signInWithCredential(credential)
@@ -178,6 +211,7 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
+    // Request code for Google Sign-In
     companion object {
         private const val RC_SIGN_IN = 123
     }

@@ -21,7 +21,8 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.055"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btnSchedule"
@@ -30,10 +31,11 @@
         android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="SCHEDULE"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btnInfo"
@@ -41,25 +43,25 @@
         android:layout_height="75dp"
         android:layout_marginTop="30dp"
         android:gravity="center"
-        android:text="INFORMATIONS"
-        android:textSize="20dp"
+        android:text="INFORMATION"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/btnSchedule"
         app:layout_constraintStart_toStartOf="@+id/btnSchedule"
-        app:layout_constraintTop_toBottomOf="@+id/btnSchedule" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSchedule"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btnTravelReq"
         android:layout_width="200dp"
         android:layout_height="75dp"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text="TRAVEL REQUIREMENTS"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnVacHistory"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/btnInfo"
         app:layout_constraintStart_toStartOf="@+id/btnInfo"
-        app:layout_constraintTop_toBottomOf="@+id/btnInfo" />
+        app:layout_constraintTop_toBottomOf="@+id/btnInfo"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btnVacHistory"
@@ -68,19 +70,21 @@
         android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="VACCINATION HISTORY"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/btnTravelReq"
         app:layout_constraintStart_toStartOf="@+id/btnTravelReq"
-        app:layout_constraintTop_toBottomOf="@+id/btnTravelReq" />
+        app:layout_constraintTop_toBottomOf="@+id/btnTravelReq"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btnLogOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Log out"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVacHistory" />
+        app:layout_constraintTop_toBottomOf="@+id/btnVacHistory"
+        tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,14 @@ import com.example.vaccinemanager.firestore.FireStoreData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-
+/**
+ * HistoryActivity displays the vaccination history of the current user.
+ *
+ * @property recyclerView RecyclerView to display the vaccination history.
+ * @property adapter Adapter for the RecyclerView.
+ * @property vaccinationList MutableList containing vaccination history data.
+ * @property btnBackHome Button to navigate back to the HomeActivity.
+ */
 class HistoryActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
@@ -21,6 +28,9 @@ class HistoryActivity : AppCompatActivity() {
     private var vaccinationList: MutableList<FireStoreData> = mutableListOf()
     private lateinit var btnBackHome: Button
 
+    /**
+     * Initializes the activity layout, RecyclerView, and listeners.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
@@ -33,39 +43,37 @@ class HistoryActivity : AppCompatActivity() {
         btnBackHome = findViewById(R.id.btnBackHome2)
 
         btnBackHome.setOnClickListener {
-            startActivity(
-                Intent(this@HistoryActivity,
-                    HomeActivity::class.java)
-            )
+            startActivity(Intent(this@HistoryActivity, HomeActivity::class.java))
         }
 
         fetchVaccinationHistoryFromFirestore()
     }
 
+    /**
+     * Fetches vaccination history data from Firestore and populates the RecyclerView.
+     */
     @SuppressLint("NotifyDataSetChanged")
     private fun fetchVaccinationHistoryFromFirestore() {
         val db = FirebaseFirestore.getInstance()
-        val userEmail = FirebaseAuth.getInstance().currentUser?.email
+        val userEmail = FirebaseAuth.getInstance().currentUser?.email.toString()
 
-        if (userEmail != null) {
-            db.collection("appointments")
-                .whereEqualTo("email", userEmail)
-                .get()
-                .addOnSuccessListener { documents ->
-                    for (document in documents) {
-                        val email = document.getString("email") ?: ""
-                        val vaccineName = document.getString("vaccineName") ?: ""
-                        val date = document.getString("date") ?: ""
-                        val time = document.getString("time") ?: ""
-                        val address = document.getString("address") ?: ""
-                        val fireStoreData = FireStoreData(email, vaccineName, date, time, address)
-                        vaccinationList.add(fireStoreData)
-                    }
-                    adapter.notifyDataSetChanged()
+        db.collection(userEmail)
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val vaccineName = document.id
+                    val email = document.getString("email") ?: ""
+                    val date = document.getString("date") ?: ""
+                    val time = document.getString("time") ?: ""
+                    val address = document.getString("address") ?: ""
+                    val fireStoreData = FireStoreData(email, vaccineName, date, time, address)
+                    vaccinationList.add(fireStoreData)
                 }
-                .addOnFailureListener { exception ->
-                    Log.w(TAG, "Error getting documents: ", exception)
-                }
-        }
+                vaccinationList.sortBy { it.vaccineName }
+                adapter.notifyDataSetChanged()
+            }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting documents: ", exception)
+            }
     }
 }

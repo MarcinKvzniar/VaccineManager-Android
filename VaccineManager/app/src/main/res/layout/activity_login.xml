@@ -21,7 +21,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100000024" />
+        app:layout_constraintVertical_bias="0.100000024"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:id="@+id/inputEmailLog"
@@ -44,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
-        tools:ignore="TextFields" />
+        tools:ignore="HardcodedText,TextFields" />
 
     <EditText
         android:id="@+id/inputPasswordLog"
@@ -52,7 +53,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/input_bg"
-        android:drawableLeft="@drawable/ic_security"
+        android:drawableStart="@drawable/ic_security"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Password"
@@ -66,7 +67,8 @@
         app:layout_constraintEnd_toEndOf="@+id/inputEmailLog"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/inputEmailLog"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmailLog" />
+        app:layout_constraintTop_toBottomOf="@+id/inputEmailLog"
+        tools:ignore="HardcodedText" />
 
 
     <CheckBox
@@ -83,7 +85,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/inputPasswordLog"
         app:layout_constraintTop_toBottomOf="@+id/inputPasswordLog"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -98,7 +100,8 @@
         app:layout_constraintEnd_toEndOf="@+id/inputPasswordLog"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/inputPasswordLog"
-        app:layout_constraintTop_toBottomOf="@+id/showPasswordCheckBox" />
+        app:layout_constraintTop_toBottomOf="@+id/showPasswordCheckBox"
+        tools:ignore="HardcodedText" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -114,16 +117,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="10dp"
+            android:paddingEnd="10dp"
             android:text="Don't have an Account?"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText,RtlSymmetry" />
 
         <TextView
             android:id="@+id/tvSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign Up"
-            android:textColor="@color/red" />
+            android:textColor="@color/red"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
     <Button
@@ -141,7 +146,8 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="HardcodedText,RtlHardcoded" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,6 @@
-<!-- dialog_date_picker.xml -->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp">
@@ -18,5 +18,6 @@
         android:layout_below="@+id/datePicker"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:text="Set Date" />
+        android:text="Set Date"
+        tools:ignore="HardcodedText" />
 </RelativeLayout>

@@ -5,8 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
+/**
+ * HomeActivity provides navigation options for various features
+ * within the application.
+ *
+ * @property btnSchedule Button to navigate to the ScheduleActivity.
+ * @property btnInfo Button to navigate to the InfoActivity.
+ * @property btnTravelReq Button to navigate to the RequirementsActivity.
+ * @property btnVacHistory Button to navigate to the HistoryActivity.
+ * @property btnLogOut Button to initiate the logout process.
+ */
 class HomeActivity : AppCompatActivity() {
 
+    // Buttons for UI interaction
     private lateinit var btnSchedule : Button
     private lateinit var btnInfo : Button
     private lateinit var btnTravelReq : Button
@@ -46,6 +57,9 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * Initializes all the views and sets up necessary listeners.
+     */
     private fun initViews() {
         btnSchedule = findViewById(R.id.btnSchedule)
         btnInfo = findViewById(R.id.btnInfo)

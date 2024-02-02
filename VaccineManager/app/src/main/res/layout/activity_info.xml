@@ -2,21 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     tools:context=".InfoActivity">
-
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="wrap_content"
-        android:layout_height="550dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="56dp"
-        android:background="@android:color/white"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -24,21 +10,31 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
-        android:text="VACCINE INFORMATIONS"
+        android:layout_marginTop="43dp"
+        android:text="VACCINE INFORMATION"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#000000"/>
+        tools:ignore="HardcodedText" />
+
+    <ListView
+        android:id="@+id/listViewInfo"
+        android:layout_width="match_parent"
+        android:layout_height="514dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:padding="16dp" />
 
     <Button
         android:id="@+id/btnBackHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/listView"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="33dp"
-        android:text="Back" />
+        android:layout_marginBottom="25dp"
+        android:text="Back"
+        tools:ignore="HardcodedText" />
 
 </RelativeLayout>

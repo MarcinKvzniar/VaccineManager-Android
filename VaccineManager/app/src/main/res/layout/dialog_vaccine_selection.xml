@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvInstructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Select a vaccine from those provided or enter its name in the text field."
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <LinearLayout
+        android:layout_below="@id/tvInstructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/spinnerVaccineList"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/etCustomVaccineName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Enter Custom Vaccine Name"
+            android:visibility="gone"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnSetVaccine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Set Vaccine"
+            android:gravity="center"
+            android:layout_gravity="center"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+</RelativeLayout>

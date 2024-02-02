@@ -1,12 +1,24 @@
-<!-- activity_requirements.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RequirementsActivity">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:text="VACCINE REQUIREMENTS"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
     <ListView
-        android:id="@+id/listViewVaccines"
+        android:id="@+id/listViewReq"
         android:layout_width="match_parent"
         android:layout_height="514dp"
         android:layout_alignParentStart="true"
@@ -22,17 +34,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp"
-        android:text="Back" />
+        android:text="Back"
+        tools:ignore="HardcodedText" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="43dp"
-        android:text="VACCINE REQUIREMENTS"
-        android:textSize="20sp"
-        android:textStyle="bold" />
 
 </RelativeLayout>

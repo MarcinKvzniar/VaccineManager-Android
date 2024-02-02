@@ -10,8 +10,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/historyRecyclerView"
-        android:layout_width="wrap_content"
-        android:layout_height="600dp"
+        android:layout_width="413dp"
+        android:layout_height="541dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="1dp"

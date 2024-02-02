@@ -1,6 +1,5 @@
 package com.example.vaccinemanager
 
-import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +9,14 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * InfoActivity displays information about different vaccines.
+ *
+ * @property listView ListView to display the list of vaccines.
+ * @property btnBackHome Button to navigate back to the HomeActivity.
+ * @property vaccineList Array of strings containing the names of vaccines.
+ * @property vaccineInfoMap Map containing vaccine names as keys and corresponding information resource IDs as values.
+ */
 class InfoActivity : AppCompatActivity() {
 
     private lateinit var listView: ListView
@@ -50,7 +57,9 @@ class InfoActivity : AppCompatActivity() {
         "HPV Vaccine" to R.string.hpv_info
         )
 
-    @SuppressLint("MissingInflatedId")
+    /**
+     * Initializes the activity layout and sets up necessary listeners.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)
@@ -64,7 +73,7 @@ class InfoActivity : AppCompatActivity() {
             )
         }
 
-        listView = findViewById(R.id.listView)
+        listView = findViewById(R.id.listViewInfo)
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, vaccineList)
         listView.adapter = adapter
 
@@ -74,6 +83,11 @@ class InfoActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Displays a dialog containing information about the selected vaccine.
+     *
+     * @param vaccineName The name of the selected vaccine.
+     */
     private fun showVaccineInfoDialog(vaccineName: String) {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_vaccine_info)
